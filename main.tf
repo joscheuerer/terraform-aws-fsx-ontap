@@ -19,7 +19,7 @@ module "fsx_ontap" {
   version = "1.3.0" # Always pin a module version
 
   # File system configuration
-  storage_capacity              = 1024                             # FSx size (GiB)
+  storage_capacity              = var.storage_capacity             # FSx size (GiB)
   subnet_ids                    = ["subnet-b06bb2d5"]              # Resolved from helper or manual input
   preferred_subnet_id           = "subnet-b06bb2d5"                # Preferred subnet (override or first available)
   security_group_ids            = ["sg-7e9b841b"]                  # SGs from helper or manual input
