@@ -1,5 +1,4 @@
 provider "aws" {
-  profile = "itx-035"
   region = "eu-west-1"
 
   ignore_tags {
