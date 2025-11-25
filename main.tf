@@ -24,7 +24,7 @@ module "fsx_ontap" {
   preferred_subnet_id           = "subnet-b06bb2d5"                # Preferred subnet (override or first available)
   security_group_ids            = ["sg-7e9b841b"]                  # SGs from helper or manual input
   deployment_type               = "SINGLE_AZ_1"                    # SINGLE_AZ_1 | SINGLE_AZ_2 | MULTI_AZ_1
-  throughput_capacity           = 1024                             # Throughput (MB/s)
+  throughput_capacity           = var.throughput_capacity            # Throughput (MB/s)
   fsx_admin_password            = random_password.fsx_ontap.result # Generated ONTAP admin password
   weekly_maintenance_start_time = "1:05:00"                        # Weekly maintenance time (Mon:HH:MM)
 
