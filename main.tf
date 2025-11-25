@@ -81,9 +81,9 @@ resource "null_resource" "fsx_tagging" {
     name_tag   = local.fsx_name_tag # Computed Name tag (fsxidXXXXXX)
   }
 
-  provisioner "local-exec" {
-    command = "aws fsx tag-resource --resource-arn ${local.fsx_file_system_arn} --tags Key=Name,Value=${self.triggers.name_tag} --region eu-west-1"
-  }
+  #provisioner "local-exec" {
+  # command = "aws fsx tag-resource --resource-arn ${local.fsx_file_system_arn} --tags Key=Name,Value=${self.triggers.name_tag} --region eu-west-1"
+ # }
 }
 
 # Override Name tag for FSx security group
